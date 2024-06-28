@@ -1,0 +1,11 @@
+<?php $brands = $block->getBrandCollection(); ?>
+<?php if (count($brands)): ?>
+    <div class="brand-slider">
+        <?php foreach ($brands as $brand): ?>
+            <div class="brand">
+                <img src="<?= $block->getViewFileUrl('Vendor_BrandSlider::images/' . $brand->getImage()) ?>" alt="<?= $brand->getName() ?>" />
+                <p><?= $brand->getName() ?></p>
+            </div>
+        <?php endforeach; ?>
+    </div>
+<?php endif; ?>

@@ -1,0 +1,221 @@
+.custom-header .menu {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+}
+
+
+    /* Customize slider container */
+    .slick-slider {
+        width: 100%;
+    }
+    
+    /* Customize slide items */
+    .slick-slide img {
+        width: 100%;
+        height: auto;
+    }
+    
+    /* Customize navigation arrows */
+    .slick-prev, .slick-next {
+        font-size: 24px;
+        color: #000;
+    }
+    
+    /* Customize pagination dots */
+    .slick-dots li {
+        margin: 0 4px;
+    }
+    
+    /* Customize active pagination dot */
+    .slick-dots li.slick-active button {
+        background-color: #000;
+    }
+    /* .slick-dots
+    {
+        display:none !important;
+    }
+    .slick-arrow
+    {
+        display:none !important;
+    } */
+
+    .slick-initialized {      
+    border: 1px solid #eee;
+    border-style: dotted;
+    margin-bottom: 30px;
+    width: 94%;
+    margin: auto;
+    margin-bottom: 30px;
+    padding: 42px 0px;
+    }
+
+
+    .counter_components {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        justify-content: space-around;
+    }
+    .rotate_img {
+      width: 300px;
+      animation: rotation 6s infinite linear;
+    }
+    
+    .text {
+      font-size: 24px; /* Adjust as needed */
+    }
+    
+    .rotate_img{
+      width: 209px;
+      animation: rotation 6s infinite linear;
+    }
+    
+    @keyframes rotation {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+    .text {
+        font-size: 20px;
+        position: absolute;
+        left: 70px;
+    }
+    
+
+
+
+
+    /* popular products */
+
+    
+.menu__link {
+  position: relative;
+  font-family: 'Muli', sans-serif;
+  line-height: 1;
+  letter-spacing: 0.040em;
+}
+
+.menu__link svg {
+  fill: none;
+  stroke: gray;
+  stroke-width: 2;
+  stroke-miterlimit: 10;
+  stroke-dasharray: 338;
+  stroke-dashoffset: 338;
+  stroke-linecap: round;
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  width: calc(100% + 60px);
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  transition: stroke-dashoffset 0s 0.2s, opacity 0.2s;
+  z-index: -1;
+}
+
+.menu__link--active svg {
+  stroke: #ff4c4c;
+}
+
+.menu__link--active svg,
+.image-button:hover svg {
+  stroke-dashoffset: 0;
+  opacity: 1;
+  transition: opacity 0s, stroke-dashoffset 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.rating-summary .rating-result>span:before
+{
+    color:rgb(255,153,35) !important;
+}
+
+.image-button {
+    position: relative;
+    display: inline-block;
+}
+
+.image-button:hover .fa-heart {
+    background-color: red;
+    color: white !important;
+}
+
+.fa-heart {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 20px;
+    padding: 5px;
+    border-radius: 30%;
+    background-color: white;
+    color: #524a4a;
+    transition: background-color 0.3s ease;
+}
+
+.btn_addcart:focus {
+    background-color: #ffffff !important;
+}
+.btn_addcart {
+
+    background-color: white;
+    color: black;
+    border: 2px solid #e7e7e7 !important;
+    border: none;
+    padding: 3%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.image-button:hover .btn_addcart {
+    opacity: 1;
+}
+
+.btn_addcart:hover{background-color: rgb(237,29,36) !important;color:white !important;}
+
+.price .price-box .price-container .price-wrapper .price {
+    font-size: 15px !important;
+    font-weight: 1;
+    color: gray !important;
+}
+
+.shine {
+    position: relative;
+    overflow: hidden;
+}
+
+.shine::before {
+    background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 100%);
+    content: "";
+    display: block;
+    height: 100%;
+    left: -75%;
+    position: absolute;
+    top: 0;
+    transform: skewX(-25deg);
+    width: 50%;
+    z-index: 2;
+}
+
+.shine:hover::before, .shine:focus::before {
+    animation: shine 0.85s;
+}
+
+@keyframes shine {
+    100% {
+        left: 125%;
+    }
+}
+.btn_addcart{ margin-bottom: 46% !important; }

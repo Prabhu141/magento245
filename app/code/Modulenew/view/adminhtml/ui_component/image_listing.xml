@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="component" xsi:type="string">Magento_Ui/js/grid/listing</item>
+        </item>
+        <item name="spinner" xsi:type="string">image_columns</item>
+    </argument>
+    <dataSource name="image_listing_data_source">
+        <argument name="dataProvider" xsi:type="configurableObject">
+            <argument name="class" xsi:type="string">Vendor\Module\Ui\Component\Listing\DataProvider</argument>
+            <argument name="name" xsi:type="string">image_listing_data_source</argument>
+        </argument>
+    </dataSource>
+    <columns name="image_columns">
+        <column name="image_id">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">ID</label>
+            </settings>
+        </column>
+        <column name="title">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Title</label>
+            </settings>
+        </column>
+        <column name="image_path">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="component" xsi:type="string">Vendor_Module/js/grid/column/image</item>
+                </item>
+            </argument>
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Image</label>
+            </settings>
+        </column>
+    </columns>
+</listing>

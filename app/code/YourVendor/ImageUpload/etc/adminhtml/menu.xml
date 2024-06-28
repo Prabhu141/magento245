@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Config/etc/menu.xsd">
+    <menu>
+        <add id="YourVendor_ImageUpload::top_level" title="Image Upload" module="YourVendor_ImageUpload" sortOrder="10" resource="YourVendor_ImageUpload::imageupload"/>
+        <add id="YourVendor_ImageUpload::imageupload" title="Manage Images" module="YourVendor_ImageUpload" sortOrder="10" parent="YourVendor_ImageUpload::top_level" action="imageupload/image/index" resource="YourVendor_ImageUpload::imageupload"/>
+    </menu>
+</config>

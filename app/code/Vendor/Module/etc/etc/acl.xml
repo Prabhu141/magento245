@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<acl xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <resources>
+        <resource id="Magento_Backend::admin">
+            <resource id="Vendor_Module::menu" title="My Custom Module" sortOrder="100">
+                <resource id="Vendor_Module::submenu" title="Submenu Item" sortOrder="10"/>
+            </resource>
+        </resource>
+    </resources>
+</acl>

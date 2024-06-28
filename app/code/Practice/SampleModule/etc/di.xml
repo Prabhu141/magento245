@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Framework\Console\CommandList">
+		<arguments>
+			<argument name="commands" xsi:type="array">
+				<item name="practiceAddItem" xsi:type="object">Practice\SampleModule\Console\Command\AddItem</item>
+			</argument>
+		</arguments>
+	</type>   
+	<preference for="Practice\SampleModule\Api\Data\ItemInterface" type="Practice\SampleModule\Model\Item"/>
+    <preference for="Practice\SampleModule\Api\ItemRepositoryInterface" type="Practice\SampleModule\Model\ItemRepository"/>
+	
+
+	<type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="practice_items_grid_data_source" xsi:type="string">PracticeGridCollection</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <virtualType name="PracticeGridCollection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">practice_sample_item</argument>
+            <argument name="resourceModel" xsi:type="string">Practice\SampleModule\Model\ResourceModel\Item</argument>
+        </arguments>
+    </virtualType>
+	
+</config>

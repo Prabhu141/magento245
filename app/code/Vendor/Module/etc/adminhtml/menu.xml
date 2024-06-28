@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Menu/etc/menu.xsd">
+    <menu>
+        <add id="Vendor_Module::menu" title="My Custom Module" module="Vendor_Module" sortOrder="100" resource="Vendor_Module::menu"/>
+        <add id="Vendor_Module::submenu" title="Submenu Item" module="Vendor_Module" sortOrder="10" action="vendor_module/index/index" parent="Vendor_Module::menu" resource="Vendor_Module::submenu"/>
+    </menu>
+</config>

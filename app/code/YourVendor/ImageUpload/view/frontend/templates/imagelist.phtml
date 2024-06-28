@@ -1,0 +1,12 @@
+<?php
+$images = $block->getImages();
+$mediaUrl = $block->getMediaUrl();
+?>
+<div class="image-list">
+    <?php foreach ($images as $image): ?>
+        <div class="image-item">
+            <h3><?php echo $this->escapeHtml($image->getTitle()); ?></h3>
+            <img src="<?php echo $mediaUrl . $image->getImage(); ?>" alt="<?php echo $this->escapeHtml($image->getTitle()); ?>" />
+        </div>
+    <?php endforeach; ?>
+</div>

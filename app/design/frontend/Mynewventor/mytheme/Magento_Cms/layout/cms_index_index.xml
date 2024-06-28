@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="page.wrapper">
+            <block class="Magestar\HomePageGallery\Block\Gallery" name="brand.slider" template="Magento_Theme::html/brand_slider.phtml"/>  
+            <block class="Magento\Framework\View\Element\Template" name="counter.component" template="Magento_Theme::html/counter_component.phtml"/>
+            <block class="Mynewvendor\Mytheme\Block\SampleProduct" name="sample.product" template="Magento_Theme::html/sample_product.phtml"/>
+        </referenceContainer>
+    </body>
+</page>

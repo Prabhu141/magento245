@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui/etc/ui_configuration.xsd">
+    <argument name="dataProvider" xsi:type="configurableObject">
+        <argument name="class" xsi:type="string">Vendor\BrandSlider\Ui\Component\DataProvider</argument>
+        <argument name="name" xsi:type="string">brandslider_listing_data_source</argument>
+        <argument name="primaryFieldName" xsi:type="string">brand_id</argument>
+        <argument name="requestFieldName" xsi:type="string">brand_id</argument>
+        <argument name="data" xsi:type="array">
+            <item name="js_config" xsi:type="array">
+                <item name="component" xsi:type="string">Magento_Ui/js/grid/provider</item>
+            </item>
+        </argument>
+    </argument>
+    <dataSource name="brandslider_listing_data_source">
+        <argument name="dataProvider" xsi:type="configurableObject">
+            <argument name="class" xsi:type="string">Vendor\BrandSlider\Ui\Component\DataProvider</argument>
+            <argument name="name" xsi:type="string">brandslider_listing_data_source</argument>
+        </argument>
+    </dataSource>
+        <listingToolbar name="listing_top">
+        <settings>
+            <sticky>false</sticky>
+        </settings>
+        <bookmark name="bookmarks"/>
+        <filters name="listing_filters"/>
+        <paging name="listing_paging"/>
+        <actions>
+            <action name="add">
+                <settings>
+                    <url path="brandslider/brand/new"/>
+                    <label translate="true">Add New Brand</label>
+                </settings>
+            </action>
+        </actions>
+    </listingToolbar>
+    <columns name="brandslider_listing_columns">
+        <column name="brand_id">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">ID</label>
+                <sortable>true</sortable>
+            </settings>
+        </column>
+        <column name="name">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Name</label>
+                <sortable>true</sortable>
+            </settings>
+        </column>
+        <column name="image">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Image</label>
+                <sortable>true</sortable>
+            </settings>
+        </column>
+        <actionsColumn name="actions">
+            <settings>
+                <indexField>brand_id</indexField>
+            </settings>
+            <action name="edit">
+                <argument name="url" xsi:type="url" path="brandslider/brand/edit"/>
+                <argument name="label" xsi:type="string" translate="true">Edit</argument>
+                <argument name="target" xsi:type="string">_self</argument>
+            </action>
+            <action name="delete">
+                <argument name="url" xsi:type="url" path="brandslider/brand/delete"/>
+                <argument name="label" xsi:type="string" translate="true">Delete</argument>
+                <argument name="confirm" xsi:type="array">
+                    <item name="title" xsi:type="string" translate="true">Delete</item>
+                    <item name="message" xsi:type="string" translate="true">Are you sure you want to delete this brand?</item>
+                </argument>
+                <argument name="target" xsi:type="string">_self</argument>
+            </action>
+        </actionsColumn>
+    </columns>
+</listing>

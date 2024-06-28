@@ -1,0 +1,48 @@
+<?php
+/** @var \Mynewvendor\Mytheme\Block\ProductList $block */
+$productCollection = $block->getProductCollection();
+$listProductBlock = $block->getListProductBlock();
+?>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<div class="products-slider">
+    <div class="products-grid">
+        <?php foreach ($productCollection as $product): ?>
+            <div class="product-item">
+                <div class="image-wrapper image-button">
+                    <div class="shine">
+                        <a href="<?php echo $product->getProductUrl(); ?>">
+                            <img src="<?php echo $listProductBlock->getImage($product, 'product_base_image')->getImageUrl(); ?>" alt="<?php echo $product->getName(); ?>"/>
+                        </a>
+                    </div>
+                    <i class="fa-regular fa-heart"></i>
+                    <form data-role="tocart-form" action="<?php echo $block->getAddToCartUrl($product); ?>" method="post">
+                        <button class="btn_addcart" type="submit" title="<?php echo __('Add to Cart'); ?>" class="action tocart">
+                            <span><?php echo __('Add to Cart'); ?></span>
+                        </button>
+                        <div class="product-info">
+                            <div class="product-reviews-summary">
+                                <?php echo $block->getReviewsSummaryHtml($product, 'short'); ?>
+                            </div>
+                            <h2 class="product-name" style="border-bottom: 1px solid rgb(250, 248, 248);padding-bottom: 31px;"><?php echo $product->getName(); ?></h2>
+                            <div class="price_addcard" style="display: inline-flex;text-align: center;">
+                                <div class="price menu__link">
+                                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 152.9 43.4" style="enable-background:new 0 0 152.9 43.4;" xml:space="preserve">
+                                       <path d="M151.9,13.6c0,0,3.3-9.5-85-8.3c-97,1.3-58.3,29-58.3,29s9.7,8.1,69.7,8.1c68.3,0,69.3-23.1,69.3-23.1 s1.7-10.5-14.7-18.4"/>
+                                    </svg>
+                                    <?php echo $listProductBlock->getProductPrice($product); ?>
+                                </div>
+                                <input type="hidden" name="product" value="<?php echo $product->getId(); ?>">
+                                <div class="quantity-box">
+                                    <button type="button" style="border:none;background:none;font-weight: 10;" class="decrease" onclick="decreaseQty(this)">-</button>
+                                    <input type="number" style="width: 14%;padding: 0px !important;background-color: #EDEDED !important;box-shadow: none !important;text-align: center !important" name="qty" value="1" min="1" class="qty">
+                                    <button type="button" style="border:none;background:none;font-weight: 10;" class="increase" onclick="increaseQty(this)">+</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        <?php endforeach; ?>
+    </div>
+</div>

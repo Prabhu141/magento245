@@ -1,0 +1,26 @@
+<!-- app/code/Practice/SampleModule/view/adminhtml/web/template/image-preview.html -->
+<div class="file-uploader-summary">
+    <div class="file-uploader-preview">
+        <a data-bind="attr: { href: $parent.getFilePreview($data) }" target="_blank">
+            <img
+                class="preview-image"
+                tabindex="0"
+                data-bind="event: { load: $parent.onPreviewLoad.bind($parent) }, attr: { src: $parent.getFilePreview($data), alt: name }">
+        </a>
+
+        <div class="actions">
+            <button
+                type="button"
+                class="action-remove"
+                data-role="delete-button"
+                data-bind="attr: { title: $t('Delete image') }, click: $parent.removeFile.bind($parent, $data)">
+                <span data-bind="i18n: 'Delete image'"/>
+            </button>
+        </div>
+    </div>
+
+    <div class="file-uploader-filename" data-bind="text: name"/>
+    <div class="file-uploader-meta">
+        <span data-bind="text: previewWidth"/>x<span data-bind="text: previewHeight"/>
+    </div>
+</div>

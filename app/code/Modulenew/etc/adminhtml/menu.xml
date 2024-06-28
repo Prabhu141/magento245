@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Menu/etc/menu.xsd">
+    <menu>
+        <add id="Vendor_Module::main_menu" title="Vendor Module" module="Vendor_Module" sortOrder="10" parent="Magento_Backend::content" resource="Vendor_Module::main_menu"/>
+        <add id="Vendor_Module::image" title="Images" module="Vendor_Module" sortOrder="20" parent="Vendor_Module::main_menu" action="vendor_module/image/index" resource="Vendor_Module::image"/>
+    </menu>
+</config>

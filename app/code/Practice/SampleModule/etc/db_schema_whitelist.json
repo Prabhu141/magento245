@@ -1,0 +1,13 @@
+{
+    "practice_sample_item": {
+        "column": {
+            "entity_id": true,
+            "title": true,
+            "description": true,
+            "name": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}

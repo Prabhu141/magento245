@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/menu.xsd">
+    <menu>
+        <add id="Vendor_BrandSlider::main_menu" title="Brand Slider" module="Vendor_BrandSlider" sortOrder="10" parent="Magento_Backend::content" resource="Vendor_BrandSlider::main_menu"/>
+        <add id="Vendor_BrandSlider::brand_slider" title="Manage Brands" module="Vendor_BrandSlider" sortOrder="20" parent="Vendor_BrandSlider::main_menu" action="brandslider/brand/index" resource="Vendor_BrandSlider::brand_slider"/>
+    </menu>
+</config>
